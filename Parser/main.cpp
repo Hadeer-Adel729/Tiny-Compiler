@@ -1,9 +1,3 @@
-/*
-Hadeer Adel 20201210  S1-2
-Hana Hany   20201213  S1-2
-*/
-
-
 #include <iostream>
 #include <fstream>
 #include <string>
