@@ -1,5 +1,5 @@
 # Tiny-Compiler
-Tiny Language Compiler
+Tiny Language
 
 // sequence of statements separated by ;
 
