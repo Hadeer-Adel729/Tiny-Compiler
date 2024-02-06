@@ -75,15 +75,16 @@ public:
                             pos++;
                         }
                     }else if(IsSpecialSympol(line[pos])){
-                        while(IsSpecialSympol(line[pos]))
-                        {
-                            token += line[pos];
+
+                        if(line[pos] == ':'){
+
+                            token = line[pos];
                             pos++;
                         }
-                    }else{
                         token += line[pos];
-                            pos++;
+                        pos++;
                     }
+
                     if (!token.empty()) {
                         processToken(token, currentLineNumber);
                     }
@@ -107,6 +108,7 @@ void printTokens(string& filePath) {
         // Write the result to the file
         for (const auto& token : tokens) {
             outputFile << "[" << token.lineNumber << "] " << token.lexeme << " (" << token.type << ")\n";
+            //cout << "[" << token.lineNumber << "] " << token.lexeme << " (" << token.type << ")\n";
         }
         cout << "Done!";
         // Close the file
@@ -214,9 +216,9 @@ private:
     }
 
 };
-int main() {
-    string InputFile = "input.txt";
-    string outputFile = "output.txt";
+int main(){
+    string InputFile = "input1.txt";
+    string outputFile = "output1.txt";
     Scanner Scanner(InputFile);
 
     Scanner.tokenize();
